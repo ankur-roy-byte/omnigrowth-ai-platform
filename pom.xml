@@ -20,6 +20,7 @@
 
     <modules>
         <module>platform-domain</module>
+        <module>platform-connectors</module>
         <module>platform-app</module>
     </modules>
 
@@ -44,6 +45,11 @@
             <dependency>
                 <groupId>com.campuscatalyst</groupId>
                 <artifactId>platform-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.campuscatalyst</groupId>
+                <artifactId>platform-connectors</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
