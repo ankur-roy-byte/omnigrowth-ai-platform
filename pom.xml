@@ -27,6 +27,7 @@
         <module>connector-youtube</module>
         <module>connector-linkedin</module>
         <module>connector-tiktok</module>
+        <module>connector-video-shotstack</module>
     </modules>
 
     <properties>
@@ -85,6 +86,11 @@
             <dependency>
                 <groupId>com.campuscatalyst</groupId>
                 <artifactId>connector-tiktok</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.campuscatalyst</groupId>
+                <artifactId>connector-video-shotstack</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
