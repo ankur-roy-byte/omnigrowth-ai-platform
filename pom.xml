@@ -26,6 +26,7 @@
         <module>platform-app</module>
         <module>connector-youtube</module>
         <module>connector-linkedin</module>
+        <module>connector-tiktok</module>
     </modules>
 
     <properties>
@@ -79,6 +80,11 @@
             <dependency>
                 <groupId>com.campuscatalyst</groupId>
                 <artifactId>connector-linkedin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.campuscatalyst</groupId>
+                <artifactId>connector-tiktok</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

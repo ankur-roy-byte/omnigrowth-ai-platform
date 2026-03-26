@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.campuscatalyst</groupId>
+        <artifactId>campus-catalyst-cloudbot</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>connector-tiktok</artifactId>
+    <name>TikTok Connector</name>
+    <description>TikTok publishing connector plugin</description>
+
+    <properties>
+        <pf4j.version>3.12.0</pf4j.version>
+    </properties>
+
+    <dependencies>
+        <!-- Internal modules -->
+        <dependency>
+            <groupId>com.campuscatalyst</groupId>
+            <artifactId>platform-connectors</artifactId>
+        </dependency>
+
+        <!-- PF4J -->
+        <dependency>
+            <groupId>org.pf4j</groupId>
+            <artifactId>pf4j</artifactId>
+            <version>${pf4j.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- HTTP Client -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <!-- JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Plugin-Id>connector-tiktok</Plugin-Id>
+                            <Plugin-Version>${project.version}</Plugin-Version>
+                            <Plugin-Provider>Campus Catalyst</Plugin-Provider>
+                            <Plugin-Class>com.campuscatalyst.connector.tiktok.TikTokPlugin</Plugin-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
