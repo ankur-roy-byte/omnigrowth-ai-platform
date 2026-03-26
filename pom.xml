@@ -21,19 +21,14 @@
     <modules>
         <module>platform-domain</module>
         <module>platform-connectors</module>
-        <module>platform-reporting</module>
-        <module>platform-workflow</module>
         <module>platform-app</module>
-        <module>connector-youtube</module>
-        <module>connector-linkedin</module>
-        <module>connector-tiktok</module>
-        <module>connector-video-shotstack</module>
     </modules>
 
     <properties>
         <java.version>17</java.version>
         <spring-modulith.version>1.3.0</spring-modulith.version>
         <lombok.version>1.18.34</lombok.version>
+        <pf4j.version>3.12.0</pf4j.version>
     </properties>
 
     <dependencyManagement>
@@ -60,38 +55,15 @@
             </dependency>
             <dependency>
                 <groupId>com.campuscatalyst</groupId>
-                <artifactId>platform-reporting</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.campuscatalyst</groupId>
-                <artifactId>platform-workflow</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.campuscatalyst</groupId>
                 <artifactId>platform-app</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <!-- PF4J Plugin Framework -->
             <dependency>
-                <groupId>com.campuscatalyst</groupId>
-                <artifactId>connector-youtube</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.campuscatalyst</groupId>
-                <artifactId>connector-linkedin</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.campuscatalyst</groupId>
-                <artifactId>connector-tiktok</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.campuscatalyst</groupId>
-                <artifactId>connector-video-shotstack</artifactId>
-                <version>${project.version}</version>
+                <groupId>org.pf4j</groupId>
+                <artifactId>pf4j</artifactId>
+                <version>${pf4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
