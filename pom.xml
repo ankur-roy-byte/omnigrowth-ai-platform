@@ -25,6 +25,7 @@
         <module>platform-workflow</module>
         <module>platform-app</module>
         <module>connector-youtube</module>
+        <module>connector-linkedin</module>
     </modules>
 
     <properties>
@@ -73,6 +74,11 @@
             <dependency>
                 <groupId>com.campuscatalyst</groupId>
                 <artifactId>connector-youtube</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.campuscatalyst</groupId>
+                <artifactId>connector-linkedin</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
