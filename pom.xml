@@ -22,6 +22,7 @@
         <module>platform-domain</module>
         <module>platform-connectors</module>
         <module>platform-reporting</module>
+        <module>platform-workflow</module>
         <module>platform-app</module>
     </modules>
 
@@ -56,6 +57,11 @@
             <dependency>
                 <groupId>com.campuscatalyst</groupId>
                 <artifactId>platform-reporting</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.campuscatalyst</groupId>
+                <artifactId>platform-workflow</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
