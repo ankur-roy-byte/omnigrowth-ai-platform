@@ -5,6 +5,7 @@ import com.campuscatalyst.reporting.model.NormalizedMetric;
 import com.campuscatalyst.reporting.service.ReportExportService;
 import com.campuscatalyst.reporting.service.ReportGeneratorService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +33,7 @@ public class ReportController {
     private final ReportExportService reportExportService;
 
     @GetMapping("/campaigns/{campaignId}")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<CampaignReportData> generateReport(
             @PathVariable UUID campaignId,
             @RequestParam(defaultValue = "30") int days) {
@@ -54,6 +56,7 @@ public class ReportController {
     }
 
     @GetMapping("/campaigns/{campaignId}/download")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<String> downloadReport(
             @PathVariable UUID campaignId,
             @RequestParam(defaultValue = "json") String format,

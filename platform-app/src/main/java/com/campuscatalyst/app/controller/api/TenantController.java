@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -34,6 +35,7 @@ public class TenantController {
     private final DtoMapper mapper;
 
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<TenantDto>> getAllTenants() {
         List<TenantDto> tenants = tenantService.findAll().stream()
                 .map(mapper::toDto)
@@ -42,6 +44,7 @@ public class TenantController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TenantDto> getTenantById(@PathVariable UUID id) {
         return tenantService.findById(id)
                 .map(mapper::toDto)
@@ -50,6 +53,7 @@ public class TenantController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TenantDto> createTenant(@Valid @RequestBody TenantDto tenantDto) {
         Tenant tenant = mapper.toEntity(tenantDto);
         Tenant created = tenantService.create(tenant);
@@ -57,6 +61,7 @@ public class TenantController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TenantDto> updateTenant(
             @PathVariable UUID id,
             @Valid @RequestBody TenantDto tenantDto) {
@@ -70,6 +75,7 @@ public class TenantController {
     }
 
     @PatchMapping("/{id}/active")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TenantDto> setTenantActive(
             @PathVariable UUID id,
             @RequestBody boolean active) {
@@ -82,6 +88,7 @@ public class TenantController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteTenant(@PathVariable UUID id) {
         try {
             tenantService.delete(id);

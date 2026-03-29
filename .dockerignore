@@ -29,8 +29,3 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
-
-# Test files
-**/test/
-**/*Test.java
-**/*Tests.java

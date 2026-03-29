@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -37,6 +38,7 @@ public class CampaignController {
     private final DtoMapper mapper;
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<List<CampaignDto>> getCampaigns(
             @RequestParam(required = false) UUID tenantId,
             @RequestParam(required = false) Status status) {
@@ -57,6 +59,7 @@ public class CampaignController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<CampaignDto> getCampaignById(@PathVariable UUID id) {
         return campaignService.findById(id)
                 .map(mapper::toDto)
@@ -65,6 +68,7 @@ public class CampaignController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CampaignDto> createCampaign(
             @RequestParam UUID tenantId,
             @Valid @RequestBody CampaignDto campaignDto) {
@@ -78,6 +82,7 @@ public class CampaignController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CampaignDto> updateCampaign(
             @PathVariable UUID id,
             @Valid @RequestBody CampaignDto campaignDto) {
@@ -91,6 +96,7 @@ public class CampaignController {
     }
 
     @PatchMapping("/{id}/status")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CampaignDto> updateCampaignStatus(
             @PathVariable UUID id,
             @RequestBody Map<String, String> body) {
@@ -104,6 +110,7 @@ public class CampaignController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteCampaign(@PathVariable UUID id) {
         try {
             campaignService.delete(id);
