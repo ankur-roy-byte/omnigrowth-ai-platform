@@ -19,6 +19,10 @@
             <groupId>com.campuscatalyst</groupId>
             <artifactId>platform-domain</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.campuscatalyst</groupId>
+            <artifactId>platform-connectors</artifactId>
+        </dependency>
 
         <!-- Spring Boot starters -->
         <dependency>

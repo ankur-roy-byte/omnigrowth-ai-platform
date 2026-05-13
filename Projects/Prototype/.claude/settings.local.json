@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes create-next-app@latest zenved-site --ts --tailwind --app --no-src-dir --eslint --import-alias \"@/*\" --use-npm --turbopack --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(nvm version *)",
+      "Bash(where nvm *)",
+      "Bash(cp \"C:/Users/ankur/Projects/ZenVed/zvPnglogo.png\" \"C:/Users/ankur/Projects/Prototype/zenved-site/public/brand/logo.png\")",
+      "Bash(cp \"C:/Users/ankur/Projects/ZenVed/QR-Code-Reg-link.png\" \"C:/Users/ankur/Projects/Prototype/zenved-site/public/brand/qr-register.png\")",
+      "Bash(cp \"C:/Users/ankur/Projects/ZenVed/LOGO VIDEO.mp4\" \"C:/Users/ankur/Projects/Prototype/zenved-site/public/brand/logo-video.mp4\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(./node_modules/.bin/tsc --noEmit)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(GIT_DIR=/c/Users/ankur/Projects/Prototype/zenved-site/.git GIT_WORK_TREE=/c/Users/ankur/Projects/Prototype/zenved-site git rev-parse --show-toplevel)",
+      "Bash(GIT_DIR=/c/Users/ankur/Projects/Prototype/zenved-site/.git GIT_WORK_TREE=/c/Users/ankur/Projects/Prototype/zenved-site git branch --show-current)",
+      "Bash(export GIT_DIR=/c/Users/ankur/Projects/Prototype/zenved-site/.git)",
+      "Bash(export GIT_WORK_TREE=/c/Users/ankur/Projects/Prototype/zenved-site)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(GIT_DIR=/c/Users/ankur/Projects/Prototype/zenved-site/.git GIT_WORK_TREE=/c/Users/ankur/Projects/Prototype/zenved-site git status --short)",
+      "Bash(GIT_DIR=/c/Users/ankur/Projects/Prototype/zenved-site/.git GIT_WORK_TREE=/c/Users/ankur/Projects/Prototype/zenved-site git add app/brand/page.tsx)",
+      "Bash(GIT_DIR=/c/Users/ankur/Projects/Prototype/zenved-site/.git GIT_WORK_TREE=/c/Users/ankur/Projects/Prototype/zenved-site git push)",
+      "Bash(GIT_DIR=/c/Users/ankur/Projects/Prototype/zenved-site/.git GIT_WORK_TREE=/c/Users/ankur/Projects/Prototype/zenved-site git pull --rebase origin v3-public-site-impl)"
+    ]
+  }
+}
